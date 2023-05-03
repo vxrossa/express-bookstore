@@ -1,10 +1,9 @@
 import { Router } from "express";
 import { injectable } from "inversify";
-import { IController } from "./Controller.interface";
 import { BaseControllerRoute } from "./BaseControllerRoute";
 
 @injectable()
-export class Controller implements IController {
+export class Controller {
   private readonly _router: Router;
   constructor() {
     this._router = Router();
@@ -14,10 +13,14 @@ export class Controller implements IController {
     return this._router;
   }
 
-  public bindRoutes(routes: BaseControllerRoute[]) {
+  protected bindRoutes(routes: BaseControllerRoute[]) {
     routes.forEach((route) => {
       const handler = route.cb.bind(this);
-      this._router[route.method](route.path, handler);
+
+      this._router[route.method](route.path, [
+        ...(route.middleware ?? []),
+        handler,
+      ]);
     });
   }
 }
