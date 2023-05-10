@@ -1,7 +1,7 @@
 import { injectable } from "inversify";
 import { Controller } from "@common/Controller";
 import { authMiddleware } from "@/api/v1/middleware/auth.middleware";
-import { Response } from "express";
+import { Request, Response } from "express";
 
 @injectable()
 export class AuthController extends Controller {
@@ -18,7 +18,7 @@ export class AuthController extends Controller {
     ]);
   }
 
-  private async login(_, res: Response) {
+  private async login(req: Request, res: Response) {
     res.send({
       message: "hello world",
     });
