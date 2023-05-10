@@ -1,9 +1,9 @@
-import { Controller } from "@common/Controller";
+import { Controller } from "../../../common/Controller";
 import { Request, Response } from "express";
 import { inject, injectable } from "inversify";
-import { CategoriesService } from "@/api/v1/services/categories.service";
-import { TYPES } from "@container/TYPES";
-import { authMiddleware } from "@/api/v1/middleware/auth.middleware";
+import { CategoriesService } from "../services/categories.service";
+import { TYPES } from "../../../container/TYPES";
+import { authMiddleware } from "../middleware/auth.middleware";
 
 @injectable()
 export class CategoriesController extends Controller {

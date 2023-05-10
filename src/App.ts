@@ -1,9 +1,9 @@
 import express, { Express, Router } from "express";
 import { json } from "body-parser";
 import { inject, injectable } from "inversify";
-import { TYPES } from "@/container/TYPES";
-import { BookController } from "@/api/v1/controllers/books.controller";
-import { CategoriesController } from "@/api/v1/controllers/categories.controller";
+import { TYPES } from "./container/TYPES";
+import { BookController } from "./api/v1/controllers/books.controller";
+import { CategoriesController } from "./api/v1/controllers/categories.controller";
 
 @injectable()
 export class App {

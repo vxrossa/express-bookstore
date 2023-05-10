@@ -1,7 +1,7 @@
 import { injectable } from "inversify";
-import { Controller } from "@common/Controller";
-import { authMiddleware } from "@/api/v1/middleware/auth.middleware";
 import { Request, Response } from "express";
+import { Controller } from "../../../common/Controller";
+import { authMiddleware } from "../middleware/auth.middleware";
 
 @injectable()
 export class AuthController extends Controller {

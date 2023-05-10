@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Controller } from "@common/Controller";
+import { Controller } from "../../../common/Controller";
 import { injectable } from "inversify";
 
 @injectable()

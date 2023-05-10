@@ -1,6 +1,6 @@
 import { inject, injectable } from "inversify";
-import { IDBService } from "@common/DBService";
-import { TYPES } from "@container/TYPES";
+import { IDBService } from "../../../common/DBService";
+import { TYPES } from "../../../container/TYPES";
 
 @injectable()
 export class CategoriesService {

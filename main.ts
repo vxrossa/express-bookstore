@@ -1,13 +1,12 @@
 import * as dotenv from "dotenv";
-import "module-alias/register.js";
 import "reflect-metadata";
 import { Container } from "inversify";
 
-import { App } from "@/App";
-import { BookController } from "@/api/v1/controllers/books.controller";
-import { CategoriesController } from "@/api/v1/controllers/categories.controller";
-import { CategoriesService } from "@/api/v1/services/categories.service";
-import { DBService, IDBService } from "@common/DBService";
+import { App } from "./src/App";
+import { BookController } from "./src/api/v1/controllers/books.controller";
+import { CategoriesController } from "./src/api/v1/controllers/categories.controller";
+import { CategoriesService } from "./src/api/v1/services/categories.service";
+import { DBService, IDBService } from "./src/common/DBService";
 
 import { TYPES } from "./src/container/TYPES";
 

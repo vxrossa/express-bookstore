@@ -11,12 +11,5 @@
     "strict": true,                                      /* Enable all strict type-checking options. */
     "skipLibCheck": true,
     "baseUrl": "./",
-    "paths": {
-      "@common/*": ["./src/common/*"],
-      "@modules/*": ["./src/modules/*"],
-      "@container/*": ["./src/container/*"],
-      "@api/*": ["./src/api"],
-      "@/*": ["./src/*"],
-    }
   }
 }
