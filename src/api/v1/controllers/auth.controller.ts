@@ -1,5 +1,7 @@
 import { injectable } from "inversify";
 import { Controller } from "@common/Controller";
+import { authMiddleware } from "@/api/v1/middleware/auth.middleware";
+import { Response } from "express";
 
 @injectable()
 export class AuthController extends Controller {
@@ -9,11 +11,16 @@ export class AuthController extends Controller {
     this.bindRoutes([
       {
         path: "/login",
-        method: "post",
+        method: "get",
         cb: this.login,
+        middleware: [authMiddleware()],
       },
     ]);
   }
 
-  private async login() {}
+  private async login(_, res: Response) {
+    res.send({
+      message: "hello world",
+    });
+  }
 }

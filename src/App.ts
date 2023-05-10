@@ -18,7 +18,6 @@ export class App {
     @inject(TYPES.CategoriesController)
     private categoriesController: CategoriesController
   ) {
-    this.bookController = bookController;
     this._app = express();
     this._port = process.env.PORT || 5000;
   }

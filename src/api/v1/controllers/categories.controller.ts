@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { inject, injectable } from "inversify";
 import { CategoriesService } from "@/api/v1/services/categories.service";
 import { TYPES } from "@container/TYPES";
+import { authMiddleware } from "@/api/v1/middleware/auth.middleware";
 
 @injectable()
 export class CategoriesController extends Controller {
@@ -16,6 +17,7 @@ export class CategoriesController extends Controller {
         path: "/categories",
         method: "get",
         cb: this.getCategories,
+        middleware: [authMiddleware()],
       },
     ]);
   }
